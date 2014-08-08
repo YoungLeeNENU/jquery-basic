@@ -1,0 +1,43 @@
+* $ 函数                                                                 :方法:
+- 选择文档中的某一部分，这是通过 $() 函数来完成的
+- 该函数需要一个字符串参数，参数中可以包含任何CSS选择符表达式
+- 该函数会返回一个新的 jQuery 对象实例
+* 添加新类 addClass                                                      :方法:
+- 它会将一个 CSS 类应用到我们选择的页面元素，这个方法唯一的参数就是要添加的类名
+- 反方法是 removeClass()
+- 使用了隐式迭代机制，因此一次函数调用就可以完成对所有选择的文档部分的修改
+  #+begin_example javascript
+  
+  function addHighlightClass() {
+  	$('div.poem-stanza').addClass('highlight');
+  }
+  
+  $(document).ready(addHighlightClass);  
+  
+  #+end_example
+* 执行代码
+- 通过使用 $(document).ready() 方法，jQuery 支持我们预定在 DOM 加载完毕后调用某个函数，而不必等待页面中的图像加载
+* 匿名函数
+- 以上实例的匿名函数写法
+- 实质跟 lambda 表达式是相似的
+  #+begin_example javascript
+  
+  $(document).ready(function () {
+  	$('div.poem-stanza').addClass('highlight');
+  })
+  
+  #+end_example
+* 控制台显示
+** console.log                                                           :方法:
+- 示例：在console中加入招聘信息
+  #+begin_example javascript
+  
+  function addHighlightClass() {
+  	console.log('Maverick是一个小而精的团队，我们随时处于缺一个人的状态。');
+  	console.log('想来 Maverick 工作吗？简历请发送至: job@maverick.com');
+  	$('div.poem-stanza').addClass('highlight');
+  }
+  
+  $(document).ready(addHighlightClass);
+  
+  #+end_example
